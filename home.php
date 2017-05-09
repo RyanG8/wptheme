@@ -9,8 +9,9 @@
 
 
       <h1>Latest Posts</h1>
-      <?php
 
+      <?php
+      if (have_posts()) : while (have_posts()) : the_post();
       if ( function_exists( 'wp_pagenavi' ) ) {
       wp_pagenavi();
       } else {
@@ -21,7 +22,7 @@
       if ( get_previous_posts_link() ) {
           previous_posts_link();
       }
-      }?>
+  } ?>
 
 
  <div id="posthead">
@@ -52,7 +53,7 @@
     if ( get_previous_posts_link() ) {
         previous_posts_link();
     }
-}?>
+} ?>
 
 </div>
 
@@ -62,4 +63,5 @@
 
 <div id="delimiter">
 </div>
+
   <?php get_footer(); ?>
